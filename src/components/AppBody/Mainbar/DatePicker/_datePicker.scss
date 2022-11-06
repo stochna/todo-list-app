@@ -68,8 +68,6 @@
   }
   .date-picker__rows-container_scrollable {
     &_true {
-      width: 100%;
-
       overflow-x: scroll;
 
       display: flex;
@@ -79,10 +77,9 @@
   }
 
   .date-picker__tr {
-    width: 100%;
-
     align-items: center;
     justify-content: space-between;
+    gap: 5px;
   }
   .date-picker__td {
     width: 65px;

@@ -18,6 +18,7 @@ const Todos = props => {
 
   return (
     <div
+      ref={refs.todos}
       className={`todos block`}
     >
       <div
@@ -25,7 +26,7 @@ const Todos = props => {
         style={
           {
             minHeight: '100%',
-            maxHeight: window.innerHeight - 46*2 - 50,
+            maxHeight: refs.todos.current && refs.todos.current.clientHeight - 46*2,
           }
         }
       >

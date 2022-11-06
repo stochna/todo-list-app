@@ -18,6 +18,7 @@ const App = props => {
   } = props;
 
   const refs = {
+    todos: hooks.useRef(null),
     newTodoForm: hooks.useRef(null),
     datePicker: hooks.useRef(null),
     newFolderTagButton: hooks.useRef(null),

@@ -196,7 +196,7 @@ const DatePicker = props => {
         const scrollStep = 100;
 
         const oldScrollPos = datePickerEl.scrollLeft * scrollStep;
-        const newScrollPos = (chosenDateEl.offsetLeft - 25 + chosenDateEl.offsetWidth / 2 - window.innerWidth / 2) * scrollStep;
+        const newScrollPos = (chosenDateEl.offsetLeft - 25 + chosenDateEl.offsetWidth / 2 - window.clientWidth / 2) * scrollStep;
 
         if (oldScrollPos < newScrollPos) {
           for (let i = oldScrollPos; i <= newScrollPos; i++) {

@@ -1,0 +1,161 @@
+@import './../../../../styles/mixins';
+
+.date-picker {
+  grid-area: date-picker;
+
+  min-width: 340px;
+
+  margin-bottom: 0;
+}
+
+.date-picker__header {
+  height: 30px;
+  width: 100%;
+
+  text-align: left;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    'month button-group'
+    'year button-group';
+}
+
+.date-picker__sheet-name {
+  margin: 0 0 0 10px;
+}
+
+.date-picker__month {
+  grid-area: month;
+
+  font-size: 16pt;
+  font-weight: 700;
+}
+
+.date-picker__year {
+  grid-area: year;
+
+  font-size: 10pt;
+  font-weight: 500;
+
+  @include themed('color', 'disabled-font-clr');
+}
+
+.date-picker__tr {
+  display: flex;
+}
+
+.date-picker__td {
+  &_disabled, &_disabled:hover {
+    cursor: pointer;
+
+    @include themed('color', 'disabled-font-clr');
+  }
+}
+
+.date-picker__button-group {
+  grid-area: button-group;
+
+  margin: 0 16px;
+
+  @include centered-content;
+}
+
+@media screen and (max-width: 600px) {
+  .date-picker {
+    @include themed('background', 'block-bg');
+  }
+  .date-picker__rows-container_scrollable {
+    &_true {
+      width: 100%;
+
+      overflow-x: scroll;
+
+      display: flex;
+
+      @include scrollbar-hidden;
+    }
+  }
+
+  .date-picker__tr {
+    width: 100%;
+
+    align-items: center;
+    justify-content: space-between;
+  }
+  .date-picker__td {
+    width: 65px;
+
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 20px 0;
+    box-sizing: border-box;
+
+    @include rounded-corners;
+
+    span:first-of-type {
+      font-size: 20pt;
+      font-weight: 500;
+    }
+
+    span:last-of-type {
+      font-size: 10pt;
+      font-weight: 400;
+
+      @include themed('color', 'disabled-font-clr');
+    }
+  }
+  .date-picker__td:hover {
+    cursor: pointer;
+
+    @include themed('background', 'date-picker-hovered-bg');
+  }
+  .date-picker__td_chosen, .date-picker__td_chosen:hover {
+    @include themed('background', 'accent');
+    @include themed('color', 'block-bg');
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .date-picker__td {
+    @include rounded-corners(32px);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .date-picker__tr {
+    justify-content: space-between;
+  }
+
+  .date-picker__td {
+    display: inline-flex;
+
+    height: 40px;
+    width: 40px;
+
+    position: relative;
+
+    align-items: center;
+    justify-content: center;
+  }
+
+  .date-picker__td:hover {
+    cursor: pointer;
+
+    @include themed('background', 'date-picker-hovered-bg');
+    @include rounded-corners;
+  }
+
+  .date-picker__td_chosen, .date-picker__td_chosen:hover {
+    background: transparent;
+
+    box-sizing: border-box;
+
+    @include themed('border', 'accent', 1px solid);
+    @include themed('color', 'accent');
+    @include rounded-corners;
+  }
+}

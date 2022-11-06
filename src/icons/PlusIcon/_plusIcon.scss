@@ -1,0 +1,50 @@
+@import './../../styles/mixins';
+
+.plus-icon {
+  .line {
+    $height: 2px;
+
+    width: 100%;
+
+    position: absolute;
+
+    &_1, &_2 {
+      top: calc(50% - $height / 2);
+      left: 0;
+    }
+  }
+
+  &_shown {
+    &_true {
+      display: block;
+    }
+    &_false {
+      display: none;
+    }
+  }
+
+  &_clicked {
+    &_true {
+      .line {
+        transition: transform .3s ease-out .3s;
+        &_1 {
+          transform: rotate(45deg);
+        }
+        &_2 {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    &_false {
+      .line {
+        transition: transform .3s ease-out .3s;
+        &_1 {
+        }
+        &_2 {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}

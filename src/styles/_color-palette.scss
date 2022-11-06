@@ -1,0 +1,82 @@
+$themes: (
+    light: (
+      app-bg: #EDEDEF,
+
+      main-font-clr: #353535,
+      disabled-font-clr: #C9C9C9,
+
+      icon-light-bg: #FCFCFC,
+      icon-dark-bg: #353535,
+
+      shadow-clr: #E1E1E1,
+
+      block-bg: #FCFCFC,
+      block-border-clr: #E1E1E1,
+
+      header-bg: #C9C9C9,
+
+      switcher-bg: #F3F5F6,
+      switcher-btn-bg: #FCFCFC,
+      switcher-clr: #6E6E6E,
+      switcher-active-clr: #353535,
+
+      sidebar-font-clr: #6E6E6E,
+      sidebar-bg: #FCFCFC,
+      sidebar-hover-bg: #F8F8F8,
+
+      date-picker-hovered-bg: #D7EDFF,
+
+      todo-input-bg: #FCFCFC,
+
+      done-btn-hovered-bg: transparent,
+      done-btn-active-bg: #E1E1E1,
+
+      accent: #6DBCFF,
+
+      desk-font-weight: 500,
+      tab-font-weight: 400,
+      mob-font-weight: 400,
+
+      tag-opacity: 1,
+    ),
+    dark: (
+      app-bg: #1F222A,
+
+      main-font-clr: #B0B4B6,
+      disabled-font-clr: #646C78,
+
+      icon-light-bg: #B0B4B6,
+      icon-dark-bg: #646C78,
+
+      shadow-clr: transparent,
+
+      block-bg: #2B3038,
+      block-border-clr: #1F222A,
+
+      header-bg: #2B3038,
+
+      switcher-bg: #20242A,
+      switcher-btn-bg: #2B3038,
+      switcher-clr: #646C78,
+      selected-switcher-clr: #ACACBA,
+
+      sidebar-font-clr: #ACACBA,
+      sidebar-bg: #2B3038,
+      sidebar-hover-bg: #272B32,
+
+      date-picker-hovered-bg: #272B32,
+
+      todo-input-bg: #1F222A,
+
+      done-btn-hovered-bg: #20242A,
+      done-btn-active-bg: #1F222A,
+
+      accent: #9ED2FF,
+
+      desk-font-weight: 400,
+      tab-font-weight: 300,
+      mob-font-weight: 300,
+
+      tag-opacity: .8,
+    )
+);

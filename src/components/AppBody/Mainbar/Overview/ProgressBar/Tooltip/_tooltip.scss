@@ -1,0 +1,50 @@
+@import './../../../../../../styles/mixins';
+
+.tooltip__container {
+  $progress-bar-height: 14px;
+  $triangle-hight: 6px;
+
+  flex-grow: 0;
+
+  font-size: 10pt;
+  color: #FCFCFC;
+  font-weight: 450;
+
+  position: relative;
+  top: $progress-bar-height + $triangle-hight;
+
+  flex-direction: column;
+
+  @include centered-content;
+
+  .tooltip__triangle {
+    height: 0;
+    width: 0;
+
+    border-bottom: $triangle-hight solid #353535;
+    border-left: $triangle-hight solid transparent;
+    border-right: $triangle-hight solid transparent;
+    border-radius: 0;
+  }
+
+  .tooltip__cloud {
+    background: #353535;
+
+    padding: 0px 15px;
+    box-sizing: border-box;
+
+    margin: -1px 0 0 0;
+
+    @include rounded-corners;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+  .tooltip__container {
+    $progress-bar-height: 18px;
+    $triangle-hight: 6px;
+
+    top: $progress-bar-height + $triangle-hight;
+  }
+}

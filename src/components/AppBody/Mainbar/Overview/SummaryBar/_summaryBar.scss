@@ -1,0 +1,31 @@
+@import './../../../../../styles/mixins';
+@import './../../../../../styles/vars';
+
+.summary-bar__container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .summary-bar__container {
+    flex-direction: column;
+
+    border-radius: $mob-border-radius;
+
+    @include themed('background', 'block-bg');
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .summary-bar__container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .summary-bar__container {
+    flex-direction: row;
+  }
+}

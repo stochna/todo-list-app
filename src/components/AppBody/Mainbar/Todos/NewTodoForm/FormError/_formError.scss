@@ -1,0 +1,39 @@
+@import './../../../../../../styles/mixins';
+
+.form__error {
+  color: #F57A38;
+
+  padding: 10px 20px;
+  box-sizing: border-box;
+
+  position: absolute;
+
+  display: none;
+
+  @include themed('opacity', 'tag-opacity');
+
+  &_shown {
+    &_true {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form__error {
+    font-size: 10pt;
+
+    left: 5px;
+    top: -3px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .form__error {
+    font-size: 9pt;
+    font-weight: 400;
+
+    left: -20px;
+    top: -30px;
+  }
+}

@@ -1,0 +1,94 @@
+@import './../../../styles/mixins';
+
+.theme-switcher__container {
+  grid-area: theme-switcher;
+}
+
+.theme-switcher__body {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  @include themed('background', 'switcher-bg');
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.theme-switcher__button-container {
+  @include default-transition(flex-grow);
+
+  &_position-left {
+    flex-grow: 0.0001;
+  }
+
+  &_position-right {
+    flex-grow: 1;
+  }
+}
+
+.theme-switcher__button {
+  @include themed('background', 'switcher-btn-bg');
+  @include themed('box-shadow', 'shadow-clr', 0 3px 8px);
+}
+
+@media screen and (max-width: 600px) {
+  .theme-switcher__body {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .theme-switcher__body {
+    $height: 36px;
+
+    height: $height;
+    width: $height * 2;
+
+    @include rounded-corners($height);
+  }
+  .theme-switcher__button-container {
+    $side: 26px;
+
+    height: $side;
+    width: $side;
+
+    margin: 0 4px;
+  }
+  .theme-switcher__button {
+    $side: 26px;
+
+    height: $side;
+    width: $side;
+
+    @include rounded-corners($side);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .theme-switcher__body {
+    $height: 26px;
+
+    height: $height;
+    width: $height * 2;
+
+    @include rounded-corners($height);
+  }
+  .theme-switcher__button-container {
+    $side: 20px;
+
+    height: $side;
+    width: $side;
+
+    margin: 0 3px;
+  }
+  .theme-switcher__button {
+    $side: 20px;
+
+    height: $side;
+    width: $side;
+
+    @include rounded-corners($side);
+  }
+}

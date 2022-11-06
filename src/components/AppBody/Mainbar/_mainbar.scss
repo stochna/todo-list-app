@@ -1,0 +1,54 @@
+.mainbar__container {
+  grid-area: mainbar;
+
+  width: 100%;
+
+  display: grid;
+}
+
+@media screen and (max-width: 600px) {
+  .mainbar__container {
+    $gap: 10px;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto $gap);
+    grid-template-areas:
+      'date-picker'
+      '.'
+      'todos'
+      '.'
+      'overview'
+      '.';
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .mainbar__container {
+    $gap: 15px;
+
+    grid-template-columns: repeat(2, $gap auto) $gap;
+    grid-template-rows: repeat(2, $gap auto) $gap;
+    grid-template-areas:
+      '. . . . .'
+      '. todos todos todos .'
+      '. . . . .'
+      '. date-picker . overview .'
+      '. . . . .';
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .mainbar__container {
+    $gap: 20px;
+
+    grid-template-columns: $gap 1fr $gap auto $gap;
+    grid-template-rows: $gap auto $gap auto auto $gap;
+    grid-template-areas:
+      '. . . . .'
+      '. todos . date-picker .'
+      '. todos . . .'
+      '. todos . overview .'
+      '. todos . . .'
+      '. . . . .';
+  }
+}

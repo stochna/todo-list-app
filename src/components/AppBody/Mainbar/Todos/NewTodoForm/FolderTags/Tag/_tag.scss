@@ -1,0 +1,49 @@
+@import './../../../../../../../styles/mixins';
+@import './../../../../../../../styles/vars';
+
+.form__tag {
+  min-width: max-content;
+
+  padding: 4px 20px;
+  box-sizing: border-box;
+
+  margin: 0 8px 5px 0;
+
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  display: inline-block;
+
+  @include default-transition;
+  @include rounded-corners;
+  @include themed('opacity', 'tag-opacity');
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form__tag {
+    border-radius: $mob-border-radius;
+
+    padding: 8px 22px;
+
+    font-size: 10pt;
+
+    @include themed('background', 'block-bg');
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .form__tag {
+    font-size: 8pt;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .form__tag {
+    font-size: 7pt;
+  }
+}

@@ -1,0 +1,80 @@
+@import './styles/mixins';
+@import './styles/vars';
+
+.app {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.block {
+  border-radius: $desk-border-radius;
+
+  padding: 25px;
+  box-sizing: border-box;
+
+  &__header {
+    margin: 0 0 20px 0;
+  }
+
+  &__title {
+    font-size: 14pt;
+    font-weight: 700;
+  }
+}
+
+.button, .button:focus, .button:active .input, .input:focus, .input:active {
+  outline: none;
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.default-transition {
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    opacity: 1;
+
+    @include short-transition(opacity);
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+
+    @include short-transition(opacity);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .block {
+    border-radius: 0;
+
+    @include themed('background', 'app-bg');
+
+    &__title {
+      margin: 0 0 0 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .block {
+    @include themed('background', 'block-bg');
+    @include themed('border', 'block-border-clr', 1px solid);
+    @include themed('box-shadow', 'shadow-clr', 0 0 10px);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+}

@@ -1,0 +1,41 @@
+@import './color-palette';
+
+@mixin themed($key, $value, $settings : null) {
+    @each $theme-name, $theme-color in $themes {
+      @if $settings {
+        .app_theme_#{$theme-name} & {
+          #{$key}: $settings map-get(map-get($themes, $theme-name), $value)
+        }
+      } @else {
+        .app_theme_#{$theme-name} & {
+          #{$key}: map-get(map-get($themes, $theme-name), $value)
+        }
+      }
+    }
+}
+
+@mixin centered-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin rounded-corners($height : 1000px) {
+  border-radius: calc($height / 2);
+}
+
+@mixin scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin default-transition($property: all) {
+  transition: $property .3s ease-in-out;
+}
+
+@mixin short-transition($property: all) {
+  transition: $property .2s ease-in;
+}

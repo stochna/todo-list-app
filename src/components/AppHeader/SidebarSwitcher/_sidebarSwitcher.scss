@@ -1,0 +1,101 @@
+@import './../../../styles/mixins';
+
+.sidebar-switcher__container {
+  grid-area: sidebar-switcher;
+
+  @include centered-content;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.sidebar-switcher__icon {
+  height: 18px;
+  width: 24px;
+
+  position: relative;
+}
+
+.sidebar-switcher__line {
+  $height: 3px;
+
+  height: $height;
+  width: 24px;
+
+  position: absolute;
+
+  @include rounded-corners($height);
+  @include themed('background', 'icon-light-bg');
+}
+
+.sidebar-switcher__container {
+  &_opened {
+
+    &_true {
+      .sidebar-switcher__line {
+        transition:
+          all .3s ease-in-out,
+          transform .3s ease-out .3s;
+
+        &_1 {
+          top: 7px;
+          transform: rotate(45deg);
+        }
+
+        &_2 {
+          top: 7px;
+          background: transparent;
+        }
+
+        &_3 {
+          top: 7px;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    &_false {
+      .sidebar-switcher__line {
+        transition:
+          all .3s ease-in-out .3s,
+          transform .3s ease-out;
+
+        &_1 {
+          top: 0;
+        }
+
+        &_2 {
+          top: 7px;
+        }
+
+        &_3 {
+          top: 14px;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar-switcher__icon {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .sidebar-switcher__icon {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .sidebar-switcher__container {
+    height: 50px;
+    width: 50px;
+  }
+  .sidebar-switcher__icon {
+    display: block;
+  }
+}

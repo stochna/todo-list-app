@@ -1,0 +1,138 @@
+@import './../../../../../../styles/mixins';
+@import './../../../../../../styles/vars';
+
+.summary-bar-section {
+  &__container {
+    flex-grow: 1;
+
+    width: 100%;
+    height: 100%;
+
+    box-sizing: border-box;
+
+    position: relative;
+
+    @include centered-content;
+  }
+
+  &__count {
+    @include centered-content;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .summary-bar-section {
+    &__container {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+
+      padding: 20px;
+
+      @include themed('background', 'block-bg');
+      @include themed('border-bottom', 'app-bg', 1px solid);
+
+      &:first-of-type {
+        border-radius: $mob-border-radius $mob-border-radius 0 0;
+      }
+      &:last-of-type {
+        border-radius: 0 0 $mob-border-radius $mob-border-radius;
+      }
+    }
+    &__count {
+      min-width: 30px;
+
+      font-size: 20pt;
+      font-weight: 500;
+
+      margin: 0 15px 0 0;
+    }
+    &__info {
+      font-size: 16pt;
+
+      padding: 6px;
+      box-sizing: border-box;
+
+      border-radius: 6px;
+
+      position: absolute;
+      right: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .summary-bar-section {
+    &__container {
+      flex-direction: row;
+      justify-content: flex-start;
+
+      padding: 5px 15px;
+
+      border-right: none;
+
+      @include themed('border-bottom', 'block-border-clr', 1px solid);
+
+      &:last-of-type {
+        @include themed('border-bottom', '', none);
+      }
+    }
+    &__count {
+      font-size: 24pt;
+
+      margin: 0 15px 0 0;
+    }
+
+    &__comment {
+      font-size: 14pt;
+      font-weight: 400;
+    }
+
+    &__info {
+      position: absolute;
+      right: 5px;
+
+      padding: 5px;
+      box-sizing: border-box;
+
+      border-radius: 6px;
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .summary-bar-section {
+    &__container {
+      flex-direction: column;
+      border-bottom: none;
+
+      padding: 0 15px;
+
+      @include themed('border-bottom', '', none);
+      @include themed('border-right', 'block-border-clr', 1px solid);
+
+      &:last-of-type {
+        border-right: none;
+      }
+    }
+    &__count {
+      margin: 0;
+    }
+
+    &__comment {
+      font-size: 10pt;
+
+      text-align: center;
+
+      @include themed('color', 'disabled-font-clr');
+    }
+
+    &__info {
+      font-size: 10pt;
+
+      position: absolute;
+      top: 0;
+      right: 10px;
+    }
+  }
+}

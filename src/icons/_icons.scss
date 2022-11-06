@@ -1,0 +1,17 @@
+@import './../styles/mixins';
+
+.icon {
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  .line {
+    $height: 2px;
+
+    height: $height;
+
+    @include rounded-corners($height);
+  }
+}

@@ -1,0 +1,87 @@
+@import './../../../styles/mixins';
+@import './../../../styles/vars';
+
+.popup__parent {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  height: 100%;
+  width: 100%;
+
+  background: rgba(0, 0, 0, .1);
+
+  z-index: 1000;
+
+  @include centered-content;
+}
+
+.popup__container {
+  border-radius: $desk-border-radius;
+
+  @include themed('background', 'block-bg');
+  @include themed('color', 'sidebar-font-clr');
+  @include themed('border', 'block-border-clr', 1px solid);
+}
+
+.popup__message {
+  margin: 30px 50px 20px;
+}
+
+.popup__buttons {
+  width: 100%;
+
+  display: flex;
+
+  border-radius: 0 0 $desk-border-radius $desk-border-radius;
+}
+
+.popup__button {
+  flex-grow: 1;
+
+  padding: 10px 50px 20px;
+  box-sizing: border-box;
+
+  text-align: center;
+
+  @include short-transition(color);
+
+  &:first-of-type {
+    border-radius: 0 0 0 $desk-border-radius;
+  }
+
+  &:last-of-type {
+    border-radius: 0 0 $desk-border-radius 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    @include themed('color', 'main-font-clr');
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .popup__container {
+    max-width: 80%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .popup__container {
+    max-width: 60%;
+
+    font-size: 12pt;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .popup__container {
+    max-width: 30%;
+
+    font-size: 10pt;
+    font-weight: 500;
+  }
+}

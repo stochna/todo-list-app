@@ -1,0 +1,50 @@
+@import './../../styles/mixins';
+
+.icon {
+  $size: 18px;
+
+  height: $size;
+  width: $size;
+
+  position: relative;
+
+  .form__line {
+    $height: 2px;
+
+    height: $height;
+
+    position: absolute;
+
+    @include themed('background', 'icon-dark-bg');
+    @include rounded-corners($height);
+  }
+
+  .form__line {
+    &_1 {
+      width: $size;
+
+      bottom: $size / 2;
+
+      transform: rotate(90deg);
+      transform-origin: center;
+    }
+    &_2 {
+      width: $size / 2;
+
+      left: 0;
+      bottom: 0;
+
+      transform: rotate(45deg);
+      transform-origin: right bottom;
+    }
+    &_3 {
+      width: $size / 2;
+
+      right: 0;
+      bottom: 0;
+
+      transform: rotate(-45deg);
+      transform-origin: left bottom;
+    }
+  }
+}

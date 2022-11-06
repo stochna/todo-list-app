@@ -1,0 +1,9 @@
+@import './../../../../../../styles/mixins';
+
+.progress-bar-section {
+  &__container {
+    height: 100%;
+
+    @include centered-content;
+  }
+}

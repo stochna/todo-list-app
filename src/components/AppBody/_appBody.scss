@@ -1,0 +1,45 @@
+@import './../../styles/mixins';
+
+.app-body__container {
+  display: grid;
+
+  position: relative;
+
+  @include themed('background', 'app-bg');
+  @include themed('color', 'main-font-clr');
+}
+
+@media screen and (max-width: 600px) {
+  .app-body__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'mainbar'
+      'sidebar';
+
+    @include themed('font-weight', 'mob-font-weight');
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .app-body__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'sidebar'
+      'mainbar';
+
+    @include themed('font-weight', 'tab-font-weight');
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .app-body__container {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'sidebar mainbar';
+
+    @include themed('font-weight', 'desk-font-weight');
+  }
+}

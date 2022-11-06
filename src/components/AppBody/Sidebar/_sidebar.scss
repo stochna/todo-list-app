@@ -1,0 +1,60 @@
+@import './../../../styles/mixins';
+
+.sidebar__container {
+  grid-area: sidebar;
+
+  display: flex;
+  align-items: stretch;
+
+  @include scrollbar-hidden;
+  @include default-transition(margin);
+}
+
+@media screen and (max-width: 600px) {
+  .sidebar__container {
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    margin: 0 25px 35px;
+
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .sidebar__container {
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    margin: 15px 15px 0 15px;
+
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .sidebar__container {
+    min-height: 70px;
+    min-width: 250px;
+
+    margin: 0 0 0 -250px;
+
+    padding: 10px 10px 0 10px;
+    box-sizing: border-box;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    flex-direction: column;
+
+    padding: 20px 0;
+
+    @include themed('background', 'sidebar-bg');
+
+    &_shown {
+      &_true {
+        margin: 0;
+      }
+    }
+  }
+}

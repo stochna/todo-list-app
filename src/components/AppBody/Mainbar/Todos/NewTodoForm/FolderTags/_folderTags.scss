@@ -1,0 +1,34 @@
+@import './../../../../../../styles/mixins';
+@import './../../../../../../styles/vars';
+
+.folder-tags__container {
+  grid-area: tags;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: baseline;
+
+  overflow-x: scroll;
+
+  @include scrollbar-hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .folder-tags__container {
+    border-radius: 0 0 $mob-border-radius $mob-border-radius;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    margin: 0 0 20px 0;
+
+    @include themed('background', 'block-bg');
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .folder-tags__container {
+    margin: 0 0 20px 0;
+  }
+}

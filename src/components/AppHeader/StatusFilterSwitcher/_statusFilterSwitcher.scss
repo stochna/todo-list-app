@@ -1,0 +1,113 @@
+@import './../../../styles/mixins';
+
+.status-filter__container {
+  grid-area: status-filter-switcher;
+
+  position: relative;
+
+  @include themed('background', 'switcher-bg');
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.status-filter__options {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.status-filter__option {
+  height: 100%;
+
+  padding: 0;
+  margin-top: -2px;
+
+  text-transform: capitalize;
+
+  @include centered-content;
+
+  &_selected {
+    &_true {
+      @include themed('color', 'selected-switcher-clr');
+    }
+    &_false {
+      @include themed('color', 'switcher-clr');
+    }
+  }
+}
+
+.status-filter__button {
+  height: 100%;
+
+  @include default-transition(margin);
+}
+
+@media screen and (max-width: 600px) {
+  .status-filter__container {
+    $height: 46px;
+
+    height: $height;
+
+    border-radius: 0;
+  }
+  .status-filter__button {
+    margin: -3px 0 0 0;
+
+    @include themed('border-bottom', 'accent', 3px solid);
+  }
+  .status-filter__options {
+    border-radius: 0;
+  }
+  .status-filter__option {
+    font-size: 12pt;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .status-filter__container {
+    $height: 36px;
+
+    height: $height;
+
+    padding: 4px;
+    box-sizing: border-box;
+
+    @include rounded-corners($height);
+  }
+  .status-filter__button {
+    @include rounded-corners;
+    @include themed('background', 'block-bg');
+    @include themed('box-shadow', 'shadow-clr', 0 3px 8px);
+  }
+  .status-filter__option {
+    font-size: 12pt;
+    font-weight: 500;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .status-filter__container {
+    $height: 26px;
+
+    height: $height;
+
+    padding: 3px;
+    box-sizing: border-box;
+
+    @include rounded-corners($height);
+  }
+  .status-filter__option {
+    font-size: 10pt;
+    font-weight: 600;
+  }
+}

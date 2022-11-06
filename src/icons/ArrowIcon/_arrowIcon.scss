@@ -1,0 +1,68 @@
+@import './../../styles/mixins';
+
+.arrow-icon__container {
+  $size: 20px;
+
+  height: $size;
+  width: $size;
+
+  position: relative;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:disabled {
+    opacity: .8;
+  }
+
+  .line {
+    position: absolute;
+
+    &_1, &_2 {
+      $height: 2px;
+
+      height: $height;
+      width: 12px;
+
+      @include themed('background', 'icon-dark-bg');
+      @include rounded-corners($height);
+    }
+  }
+}
+
+.arrow-icon {
+  &_prev {
+    .line {
+      &_1 {
+        top: 9px;
+        left: 0;
+        transform: rotate(-45deg);
+        transform-origin: left;
+      }
+      &_2 {
+        top: 8px;
+        left: 0px;
+        transform: rotate(45deg);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &_next {
+    .line {
+      &_1 {
+        top: 9px;
+        right: 0;
+        transform: rotate(45deg);
+        transform-origin: right;
+      }
+      &_2 {
+        top: 8px;
+        right: 0px;
+        transform: rotate(-45deg);
+        transform-origin: right;
+      }
+    }
+  }
+}

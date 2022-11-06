@@ -1,0 +1,19 @@
+@import './../../../../../styles/mixins';
+
+.new-folder-button {
+  .sidebar__add-item-button {
+    margin: 0 16px;
+
+    .line {
+      @include themed('background', 'disabled-font-clr');
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .new-folder-button {
+    .sidebar__item-name {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import './../../../../styles/mixins';
+
+.todos {
+  grid-area: todos;
+
+  max-height: 100%;
+
+  position: relative;
+}
+
+.todos_scrollable_true {
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  @include scrollbar-hidden;
+}
+
+@media screen and (max-width: 600px) {
+  .todos_scrollable_true {
+    max-height: 400px;
+
+    border-radius: 18px;
+  }
+  .icon {
+    margin: 0 10px;
+  }
+}

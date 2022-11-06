@@ -1,0 +1,17 @@
+@import './../../../../styles/mixins';
+
+.overview__block {
+  grid-area: overview;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.overview__header {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+}

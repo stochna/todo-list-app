@@ -1,0 +1,38 @@
+@import './../../../../../styles/mixins';
+@import './../../../../../styles/vars';
+
+.todo-list__container {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  z-index: 1;
+}
+
+.todo-list__body {
+  box-sizing: border-box;
+
+  &_blank {
+    &_true {
+      @include themed('border', '', none);
+      @include themed('border-top', 'block-border-clr', 1px solid);
+    }
+    &_false {
+      @include themed('border', 'block-border-clr', 1px solid);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .todo-list__body {
+    border-radius: 28px;
+
+    border: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .todo-list__body {
+    border-radius: $desk-border-radius;
+  }
+}

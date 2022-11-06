@@ -1,0 +1,234 @@
+@import './../../../../../../styles/mixins';
+@import './../../../../../../styles/vars';
+
+.todo {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  margin: 0;
+
+  display: flex;
+
+  word-break: break-all;
+
+  &:first-of-type {
+    border-radius: $desk-border-radius $desk-border-radius 0 0;
+  }
+  &:last-of-type {
+    border-bottom: none;
+    border-radius: 0 0 $desk-border-radius $desk-border-radius;
+  }
+  &:only-of-type {
+    border-radius: $desk-border-radius;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.todo__body {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.todo__done-button, .todo__done-button:hover {
+  background: transparent;
+
+  box-sizing: border-box;
+
+  flex-shrink: 0;
+
+  position: relative;
+
+  cursor: pointer;
+
+  @include centered-content;
+  @include short-transition;
+  @include themed('border', 'block-border-clr', 1px solid);
+}
+
+.todo_status {
+  &_active {
+    .todo__done-button:hover {
+      cursor: pointer;
+
+      @include short-transition;
+      @include themed('border', 'accent', 1px solid);
+      @include themed('background', 'done-btn-hovered-bg');
+    }
+  }
+
+  &_done {
+    @include themed('color', 'disabled-font-clr');
+    &:hover {
+      cursor: default;
+    }
+    .todo__done-button {
+      @include themed('background', 'done-btn-active-bg');
+
+      .done-icon__line {
+        @include themed('background', 'block-bg');
+      }
+    }
+  }
+}
+
+.todo__folder-indicator {
+  flex-grow: 0;
+  flex-shrink: 0;
+
+  margin: 0 5px;
+}
+
+.todo__text {
+  flex-grow: 1;
+
+  span:hover {
+    cursor: pointer;
+    text-decoration: line-through;
+    text-decoration-thickness: 1px;
+  }
+}
+
+.done-icon {
+  $size: 25px;
+
+  height: $size;
+  width: $size;
+
+  position: relative;
+
+  .done-icon__line {
+    $height: 2px;
+    height: $height;
+
+    position: absolute;
+
+    @include themed('background', 'icon-dark-bg');
+    @include rounded-corners($height);
+
+    &_1, &_2 {
+      top: 16px;
+    }
+    &_1 {
+      width: 7px;
+
+      left: 10px;
+
+      transform: rotate(225deg);
+      transform-origin: left;
+    }
+    &_2 {
+      width: 13px;
+
+      left: 10px;
+
+      transform: rotate(-45deg);
+      transform-origin: left bottom;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .todo {
+    padding: 20px;
+
+    @include themed('background', 'block-bg');
+    @include themed('border-bottom', 'app-bg', 1px solid);
+
+    &:first-of-type {
+      border-radius: $mob-border-radius $mob-border-radius 0 0;
+    }
+    &:last-of-type {
+      border-radius: 0 0 $mob-border-radius $mob-border-radius;
+    }
+    &:only-of-type {
+      border-radius: $mob-border-radius;
+    }
+  }
+  .todo__done-button, .todo__done-button:hover {
+    $size: 30px;
+
+    height: $size;
+    width: $size;
+
+    @include rounded-corners($size);
+  }
+  .todo__text {
+    margin: 0 10px 0 15px;
+  }
+  .todo__folder-indicator {
+    $size: 8px;
+
+    height: $size;
+    width: $size;
+
+    @include rounded-corners($size);
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .todo {
+    flex-direction: column;
+
+    padding: 10px 15px;
+
+    @include themed('border-bottom', 'block-border-clr', 1px solid);
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+  .todo__done-button, .todo__done-button:hover {
+    $size: 30px;
+
+    height: $size;
+    width: $size;
+
+    @include rounded-corners($size);
+  }
+  .todo__text {
+    margin: 0 10px 0 15px;
+  }
+  .todo__folder-indicator {
+    $size: 6px;
+
+    height: $size;
+    width: $size;
+
+    @include rounded-corners($size);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .todo {
+    flex-direction: row;
+
+    padding: 10px 15px;
+  }
+  .todo__done-button, .todo__done-button:hover {
+    $size: 25px;
+
+    height: $size;
+    width: $size;
+
+    @include rounded-corners($size);
+  }
+  .todo__text {
+    margin: 0 10px;
+  }
+  .todo__folder-indicator {
+    $size: 5px;
+
+    height: $size;
+    width: $size;
+
+    @include rounded-corners($size);
+  }
+}

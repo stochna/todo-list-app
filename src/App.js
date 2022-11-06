@@ -18,6 +18,7 @@ const App = props => {
   } = props;
 
   const refs = {
+    todos: hooks.useRef(null),
     newTodoForm: hooks.useRef(null),
     datePicker: hooks.useRef(null),
     newFolderTagButton: hooks.useRef(null),
@@ -69,6 +70,11 @@ const App = props => {
   return (
     <div
       className={`app app_theme_${settings.theme}`}
+      styles={
+        {
+          width: window.clientWidth,
+        }
+      }
       onClick={e => clickTracker(e)}
     >
       <AppHeader

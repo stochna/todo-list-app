@@ -135,7 +135,7 @@ const NewTodoForm = props => {
         date: settings.currentChosenDate,
       }
     );
-  }, [settings.date]);
+  }, [settings.currentChosenDate]);
 
   return (
     <CSSTransition

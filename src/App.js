@@ -70,11 +70,6 @@ const App = props => {
   return (
     <div
       className={`app app_theme_${settings.theme}`}
-      styles={
-        {
-          width: window.clientWidth,
-        }
-      }
       onClick={e => clickTracker(e)}
     >
       <AppHeader

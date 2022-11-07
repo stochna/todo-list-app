@@ -30,7 +30,7 @@ const StatusFilterSwitcher = props => {
     },
   ]);
 
-  const switcherButtonWidth = settings.device === 'mob' ? window.innerWidth / 3 : settings.device === 'desktop' ? 70 : 110;
+  const switcherButtonWidth = settings.device === 'mob' ? document.documentElement.clientWidth / 3 : settings.device === 'desktop' ? 70 : 110;
   const switcherButtonPadding = settings.device === 'mob' || settings.device === 'desktop' ? 3 : 4;
 
   const clickHandler = status => {

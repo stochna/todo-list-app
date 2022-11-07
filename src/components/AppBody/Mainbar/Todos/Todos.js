@@ -23,12 +23,6 @@ const Todos = props => {
     >
       <div
         className={`todos_scrollable_true`}
-        style={
-          {
-            minHeight: '100%',
-            maxHeight: refs.todos.current && refs.todos.current.clientHeight - 46*2,
-          }
-        }
       >
 
         <TodoListHeader

@@ -8,7 +8,6 @@ const TodoList = props => {
     actions,
     folders,
     settings,
-    hooks,
     funcs,
   } = props;
 
@@ -64,7 +63,6 @@ const TodoList = props => {
                   todo={todo}
                   actions={actions}
                   folders={folders}
-                  hooks={hooks}
                 />
             </CSSTransition>)
         }>

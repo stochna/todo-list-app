@@ -48,7 +48,6 @@ const Todos = props => {
           actions={actions}
           folders={folders}
           settings={settings}
-          hooks={hooks}
           funcs={funcs}
         />
 

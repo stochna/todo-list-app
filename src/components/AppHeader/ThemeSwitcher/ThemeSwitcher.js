@@ -4,7 +4,6 @@ const ThemeSwitcher = props => {
   const {
     actions,
     settings,
-    hooks,
   } = props;
 
   const switcherPosition = settings.theme === 'light' ? 'right' : 'left';

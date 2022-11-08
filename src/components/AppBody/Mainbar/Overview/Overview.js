@@ -34,7 +34,6 @@ const Overview = props => {
         todos={todos}
         settings={settings}
         funcs={funcs}
-        settings={settings}
       />
 
       <ProgressBar

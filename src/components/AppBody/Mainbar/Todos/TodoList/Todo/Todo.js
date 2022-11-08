@@ -5,10 +5,7 @@ const Todo = props => {
     todo,
     actions,
     folders,
-    hooks,
   } = props;
-
-  const [isButtonHovered, setIsButtonHovered] = hooks.useState(false);
 
   const markCompleted = () => !(Date.now() < +todo.date) && actions.markCompleted(todo.id);
   const markActive = () => actions.markActive(todo.id);
@@ -27,8 +24,6 @@ const Todo = props => {
 
         <div
           className='button todo__done-button'
-          onMouseEnter={() => setIsButtonHovered(true)}
-          onMouseLeave={() => setIsButtonHovered(false)}
           onClick={isTodoActive ? markCompleted : markActive}
         >
           {

@@ -93,7 +93,6 @@ const Sidebar = props => {
           refs={refs}
           folders={folders}
           actions={actions}
-          funcs={funcs}
           modes={modes}
           settings={settings}
         />

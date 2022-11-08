@@ -5,7 +5,6 @@ const SidebarSwitcher = props => {
     refs,
     actions,
     funcs,
-    settings,
     modes,
   } = props;
 

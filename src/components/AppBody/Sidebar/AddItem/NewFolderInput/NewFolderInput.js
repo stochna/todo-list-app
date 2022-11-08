@@ -1,11 +1,9 @@
 import './_newFolderInput.scss';;
 
-const NewFolderForm = props => {
+const NewFolderInput = props => {
   const {
     refs,
     actions,
-    funcs,
-    newFolder,
     modes,
     settings,
   } = props;
@@ -95,4 +93,4 @@ const NewFolderForm = props => {
   )
 };
 
-export default NewFolderForm;
+export default NewFolderInput;

@@ -8,7 +8,6 @@ const AddItem = props => {
     refs,
     folders,
     actions,
-    funcs,
     modes,
     settings,
   } = props;
@@ -26,7 +25,6 @@ const AddItem = props => {
     <NewFolderInput
       refs={refs}
       actions={actions}
-      funcs={funcs}
       modes={modes}
       settings={settings}
     />

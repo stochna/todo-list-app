@@ -22,7 +22,6 @@ const AppHeader = props => {
         refs={refs}
         actions={actions}
         funcs={funcs}
-        settings={settings}
         modes={modes}
       />
 
@@ -38,7 +37,6 @@ const AppHeader = props => {
         refs={refs}
         actions={actions}
         settings={settings}
-        hooks={hooks}
       />
 
     </div>

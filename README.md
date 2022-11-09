@@ -5,7 +5,7 @@ A variation of implementation of traditional to-do list app.
 ![Todo List App Preview](https://user-images.githubusercontent.com/53754381/200198517-1d6c9cb7-10f5-4eac-86fa-a68c528e6cdb.gif)
 
 ## Demo
-[Open demo](https://alevtinaa.github.io/todo-list-app/).
+[Open demo](https://stochna.github.io/todo-list-app/).
 
 ## Features
 * date picker
